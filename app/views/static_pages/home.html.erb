@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
-  </head>
-  <body>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/record_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
     <div class="center jumbotron">
       <h1>Welcome to the Sample App</h1>
 
@@ -18,5 +24,5 @@
 
     <%= link_to image_tag("rails.png", alt: "Rails logo"),
                 'http://rubyonrails.org/' %>
-  </body>
-</html>
+
+<% end %>

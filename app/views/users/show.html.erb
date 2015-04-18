@@ -10,4 +10,14 @@
 		</section>
 	</aside>
 </div>
+<div class="col-md-8">
+  <% if @user.records.any? %>
+    <h3>Lifting Records (<%= @user.records.count %>)</h3>
+    <ol class="records">
+      <%= render @records %>
+      <%= will_paginate @records %>
+
+    </ol>
+  <% end %>
+</div>
 

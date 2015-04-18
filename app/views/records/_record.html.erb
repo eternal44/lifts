@@ -1,0 +1,8 @@
+<li id="micropost-<%= record.id %>">
+  <%= link_to gravatar_for(record.user, size: 50), record.user %>
+  <span class="user"><%= link_to record.user.name, record.user %></span>
+  <span class="lift_weight"><%= record.lift_weight %> lbs of lift #<%= record.lift_id %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(record.created_at) %> ago.
+  </span>
+</li>
