@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  lift_id: 1
+  lift_weight: 300
+  created_at: <%= 10.minutes.ago %>
+
+two:
+  user_id: 2
+  lift_id: 2
+  lift_weight: 300
+  created_at: <%= 20.minutes.ago %>
+
+three:
+  user_id: 28
+  lift_id: 3
+  lift_weight: 300
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  user_id: 3
+  lift_id: 2
+  lift_weight: 300
+  created_at: <%= Time.zone.now %>
