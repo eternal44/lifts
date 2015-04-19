@@ -11,14 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-
 <br>
   <div>
-    <!-- collection_select(:lift, :user, Lift.all, :id, :lift_name) -->
     <%= f.collection_select :lift_id, Lift.all, :id, :lift_name %>
   </div>
 <br>

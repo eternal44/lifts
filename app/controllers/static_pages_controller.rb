@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   	if logged_in?
 	  	@record = current_user.records.build
 	  	@feed_items = current_user.feed.paginate(page: params[:page])
+      @lift_name = "" # place holder.  build something like this in models/user: user.lift_name
 	  end
   end
 
