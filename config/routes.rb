@@ -18,10 +18,19 @@ Rails.application.routes.draw do
   get     'login'   => 'sessions#new'
   post    'login'   => 'sessions#create'
   delete  'logout'  => 'sessions#destroy'
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :records,             only: [:create, :destroy]
+  resources :records,             only: [:create, :destroy] do
+    member do
+      get :lift_name, :lift_weight
+    end
+  end
+  resources :relationships,       only: [:create, :destroy]
   
 
   # The priority is based upon order of creation: first created -> highest priority.

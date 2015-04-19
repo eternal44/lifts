@@ -24,3 +24,11 @@ users = User.order(:created_at).take(6)
   lift_weight = Faker::Number.between(from=100, to=700)
   users.each { |user| user.records.create!(lift_weight: lift_weight, lift_id: lift_id) }
 end
+
+# Following relationships
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
