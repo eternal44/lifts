@@ -6,6 +6,8 @@ User.create!(name:  "James Youn",
              activated: true,
              activated_at: Time.zone.now)
 
+
+
 Lift.create!(lift_name: "Squat")
 Lift.create!(lift_name: "Clean")
 
