@@ -1,10 +1,13 @@
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
+User.create!(name:  "James Youn",
+             email: "jamesyoun710@gmail.com",
+             password:              "gooneen44",
+             password_confirmation: "gooneen44",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
+
+Lift.create!(lift_name: "Squat")
+Lift.create!(lift_name: "Clean")
 
 99.times do |n|
   name  = Faker::Name.name
