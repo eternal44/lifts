@@ -25,6 +25,8 @@ class RecordsController < ApplicationController
 				params.require(:record).permit(:lift_weight, :lift_id)
 			end
 
+
+
 			def correct_user
 				@record = current_user.records.find_by(id: params[:id])
 				redirect_to root_url if @record.nil?
