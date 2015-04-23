@@ -21,16 +21,78 @@
   </div>
 </div>
 <% else %>
-    <div class="center jumbotron">
-      <h1>Welcome to Lift Ranker</h1>
 
-      <h2>
-        Record and compare how your lifts rank privately amoung your peers or the world!
-      </h2>
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>Lift Ranker</h1>
+                <h2>Beta</h2>
+            </div>
+        </div>
+    </header>
 
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    <!-- Page Content -->
+    <div class="container">
+
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">Post Your Lift
+                <span class="text-muted">And Win Prizes</span>
+            </h2>
+            <p class="lead">Compare how strong you are to the other people at your gym, city, or state</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">Compare by body weight, gender, and weight.
+                <span class="text-muted"></span>
+            </h2>
+            <p class="lead">See how you compare to others more similar to your stats.  Or, if you're up for the challenge, compare your lifts with people in weight classes above your own!</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Third Featurette -->
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">Prize Selections
+                <span class="text-muted"></span>
+            </h2>
+            <p class="lead">At the very least you can brag about being the strongest in your area but we wanted to take it a step further - what if you could win prizes & noteriety for it as well?</p>
+        </div>
+
+        <hr class="featurette-divider">
       <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-    </div>
 
-    <%= link_to image_tag("rails.png", alt: "Rails logo"),
-                'http://rubyonrails.org/' %>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    </div>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
 <% end %>
+
+
