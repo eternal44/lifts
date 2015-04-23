@@ -105,7 +105,7 @@ class User < ActiveRecord::Base
   end  
 
   def self.search(search)
-    where("name like ?", "%#{search}%")
+    where("name ilike ?", "%#{search}%")
     # where("content LIKE ?", "%#{search}%") # leaving this for future reference.
   end
   
