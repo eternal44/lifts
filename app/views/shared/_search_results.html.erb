@@ -1,0 +1,9 @@
+	Search Results
+	<div class="col-mid-1">
+		<% if @users.present? %>
+		<ul class="users">
+		  <%= render @users %>
+		</ul>
+		<% else %>
+		  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+		<% end %>
