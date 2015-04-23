@@ -103,6 +103,11 @@ class User < ActiveRecord::Base
   def following?(other_user)
     following.include?(other_user)
   end  
+
+  def self.search(search)
+    where("name like ?", "%#{search}%")
+    # where("content LIKE ?", "%#{search}%") # leaving this for future reference.
+  end
   
   private
 
