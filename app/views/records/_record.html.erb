@@ -2,13 +2,19 @@
   <%= link_to gravatar_for(record.user, size: 50), record.user %>
   <span class="user"><%= link_to record.user.name, record.user %></span>
   <span class="lift_weight"><%= record.lift_weight %> lbs - <%= record.lift.lift_name %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(record.created_at) %> ago.
+
     <% if current_user?(record.user) %>
-    	<%= link_to "delete", record, method: :delete,
-    																data: { confirm: "You sure?" } %>
+      <%= link_to "delete", record, method: :delete,
+                                    data: { confirm: "You sure?" } %>
       |                              
       <%= link_to "edit", edit_record_path(record) %>                              
-		<% end %>
+    <% end %>
+
+  <% if record.video_link.present? %>
+  |
+    <a href="<%= record.video_link %>">video</a>
+  <% end %>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(record.created_at) %> ago.
   </span> 
 </li>
