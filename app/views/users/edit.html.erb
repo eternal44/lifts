@@ -18,6 +18,19 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+      <%= f.label :gender %><br />
+      <%= f.label :gender, "Male", :value => "Male"  %>
+      <%= f.radio_button :gender, "Male" %>
+
+      <%= f.label :gender, "Female", :value => "Female" %>
+      <%= f.radio_button :gender, "Female" %>
+
+      <%= f.label :body_weight %>
+      <%= f.text_field :body_weight, class: 'form-control' %>
+
+
+
+
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 

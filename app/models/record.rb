@@ -15,4 +15,5 @@ class Record < ActiveRecord::Base
 	validates :lift_weight, presence: true
   validates_format_of :video_link, :with => URI::regexp(%w(http https)),
   allow_nil: true
+
 end
