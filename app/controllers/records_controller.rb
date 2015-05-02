@@ -14,6 +14,20 @@ class RecordsController < ApplicationController
 		end
 	end
 
+	def edit
+		@record = Record.find(params[:id])
+	end
+
+	def update
+		@record = Record.find(params[:id])
+		if @record.update_attributes(record_params)
+			flash[:success] = "Video validation updated"
+			redirect_to root_url
+		else
+			render 'edit'
+		end
+	end
+
 	def destroy
 		@record.destroy
 		flash[:success] = "Record deleted"
@@ -23,7 +37,7 @@ class RecordsController < ApplicationController
 		private
 
 			def record_params
-				params.require(:record).permit(:lift_weight, :lift_id)
+				params.require(:record).permit(:lift_weight, :lift_id, :video_link)
 			end
 
 			def correct_user

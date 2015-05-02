@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :records,             only: [:create, :destroy] do
+  resources :records,             only: [:create, :edit, :update, :destroy] do
     # member do
     #   get :lift_name, :lift_weight # commenting out because I randomly added it before hoping it'd do something.
     # end

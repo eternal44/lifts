@@ -7,6 +7,8 @@
     <% if current_user?(record.user) %>
     	<%= link_to "delete", record, method: :delete,
     																data: { confirm: "You sure?" } %>
+      |                              
+      <%= link_to "edit", edit_record_path(record) %>                              
 		<% end %>
   </span> 
 </li>
