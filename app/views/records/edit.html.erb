@@ -1,0 +1,15 @@
+<% provide(:title, "Add video link") %>
+<h1>Add video link</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@record) do |f| %>
+    	<%= render 'shared/error_messages', object: f.object %>
+
+    	<%= f.label :video_link %>
+    	<%= f.text_field :video_link, class: 'form-control' %>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
