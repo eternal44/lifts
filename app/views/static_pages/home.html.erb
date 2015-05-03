@@ -28,11 +28,12 @@
             <div class="container">
                 <h1>Lift Ranker</h1>
                 <h2>Beta</h2>
+                <%= link_to "Sign up now!", signup_path, 
+                    class: "btn btn-lg btn-primary" %>
             </div>
         </div>
     </header>
 
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
     <!-- Page Content -->
     <div class="container">
 
@@ -40,7 +41,7 @@
 
         <!-- First Featurette -->
         <div class="featurette" id="about">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/300x300">
             <h2 class="featurette-heading">Post Your Lift
                 <span class="text-muted">And Win Prizes</span>
             </h2>
@@ -51,7 +52,7 @@
 
         <!-- Second Featurette -->
         <div class="featurette" id="services">
-            <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+            <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/300x300">
             <h2 class="featurette-heading">Compare by body weight, gender, and weight.
                 <span class="text-muted"></span>
             </h2>
@@ -62,15 +63,17 @@
 
         <!-- Third Featurette -->
         <div class="featurette" id="contact">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-            <h2 class="featurette-heading">Prize Selections
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/300x300">
+            <h2 class="featurette-heading">Prizes and Hype
                 <span class="text-muted"></span>
             </h2>
-            <p class="lead">At the very least you can brag about being the strongest in your area but we wanted to take it a step further - what if you could win prizes & noteriety for it as well?</p>
+            <p class="lead">Win prizes and win bragging rights as the strongest person in your gym, city, or state!</p>
         </div>
 
         <hr class="featurette-divider">
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+        <div class="text-center">
+          <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+        </div>
 
         <!-- Footer -->
         <footer>
