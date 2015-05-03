@@ -107,7 +107,7 @@ class User < ActiveRecord::Base
   end  
 
   def self.search(search)
-    where("name ilike ?", "%#{search}%")
+    where("name ilike :name", name: "%#{search}%")
   end
   
   private
