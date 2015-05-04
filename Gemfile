@@ -16,7 +16,8 @@ gem 'sdoc',                     '0.4.0', group: :doc
 
 group :development, :test do
   gem 'pg',          '0.17.1'
-  gem 'byebug',      '3.4.0'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
 end
