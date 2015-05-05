@@ -6,7 +6,6 @@ gem 'faker',                    '1.4.2'
 gem 'will_paginate',            '3.0.7'
 gem 'bootstrap-will_paginate',  '0.0.10'
 gem 'bootstrap-sass',           '3.2.0.0'
-gem 'autoprefixer-rails'
 gem 'sass-rails',               '5.0.1'
 gem 'uglifier',                 '2.5.3'
 gem 'coffee-rails',             '4.1.0'
@@ -17,8 +16,7 @@ gem 'sdoc',                     '0.4.0', group: :doc
 
 group :development, :test do
   gem 'pg',          '0.17.1'
-  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
-  gem 'pry-byebug'
+  gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
 end
