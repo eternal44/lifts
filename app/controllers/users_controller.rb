@@ -6,10 +6,10 @@ class UsersController < ApplicationController
 
 
   def index
-    @users = User.paginate(page: params[:page]) #original index 
+    @users = User.paginate(page: params[:page], per_page: 10) #original index 
     # @users = User.all #for simple search w/o paginate
     if params[:search]
-      @users = User.search(params[:search]).order("name ASC").paginate(page: params[:page])
+      @users = User.search(params[:search]).order("name ASC").paginate(page: params[:page], per_page: 10)
     else
       @users
     end
