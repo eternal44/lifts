@@ -7,7 +7,11 @@ class Record < ActiveRecord::Base
 	acts_as_votable
 
 	def score
-		(self.get_upvotes.size / (self.get_downvotes.size + self.get_upvotes.size))*100
+		if self.get_downvotes.size + self.get_upvotes.size != 0
+			self.get_upvotes.size / (self.get_downvotes.size + self.get_upvotes.size) * 100
+		else
+			puts 0
+		end
 	end
 
 	def self.feed_scope

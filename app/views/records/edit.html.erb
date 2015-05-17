@@ -7,7 +7,7 @@
     	<%= render 'shared/error_messages', object: f.object %>
 
     	<%= f.label :video_link %>
-    	<%= f.text_field :video_link, class: 'form-control' %>
+    	<%= f.text_field :video_link, class: 'form-control', placeholder: "copy & paste youtube url's only" %>
 
       <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>

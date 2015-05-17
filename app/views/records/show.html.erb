@@ -1,20 +1,19 @@
 
 Lift Name: <%= @record.lift.lift_name %> <br>
 Lift Weight: <%= @record.lift_weight %> <br>
-Video Validation: <a href="<%= @record.video_link %>">click</a> <br>
 <div class="container">
   <div class="row">
+  	<% if @record.video_link.present? %>
     <div class="col-sm-6">
 			<!-- 16:9 aspect ratio -->
-			<div class=""
 			<div class="embed-responsive embed-responsive-16by9">
-			  <iframe class="embed-responsive-item" 
-			  src=<%= @record.video_link %>>
-				</iframe>
+				<%= embed(@record.video_link) %>
 			</div>
 		</div>
+		<% end %>
 	</div>
 </div>
+
 
 
 <%= number_to_percentage(@record.score, precision: 0) %> <br>
