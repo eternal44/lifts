@@ -22,12 +22,15 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
+    resources :comments, module: :users
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :records,             only: [:create, :show, :edit, :update, :destroy]
+  resources :records,             only: [:create, :show, :edit, :update, :destroy] do
+    resources :comments, module: :records
+  end
   resources :relationships,       only: [:create, :destroy]
-  # resources :gyms,                only: [:show, :index]
+  resources :gyms,                only: [:show, :index]
   
 
   # The priority is based upon order of creation: first created -> highest priority.

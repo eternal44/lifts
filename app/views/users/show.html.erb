@@ -14,11 +14,13 @@
 			<br>
 			Body Weight: <%= @user.body_weight %>
 			<br>
-			Gym name: <%= @user.gym.gym_name %>
+			<% if @user.gym.present? %>
+				Gym name: <%= @user.gym.gym_name %>
+			<% end %>
 		</section>
 
 		<%= render partial: "comments/comments", locals: {commentable: @user} %>
-
+		<%= render partial: "comments/form", locals: {commentable: @user} %>
 	</aside>
 	<div class="col-md-8">
 		<%= render 'follow_form' if logged_in? %>
