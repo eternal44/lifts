@@ -1,3 +1,8 @@
 
+Lift Name: <%= @record.lift.lift_name %> <br>
+Lift Weight: <%= @record.lift_weight %> <br>
+Video Validation: <a href="<%= @record.video_link %>">click</a>
+
+
 <%= render partial: "comments/comments", locals: {commentable: @record} %>
 <%= render partial: "comments/form", locals: {commentable: @record} %>

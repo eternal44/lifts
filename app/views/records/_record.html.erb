@@ -1,8 +1,11 @@
 <li id="record-<%= record.id %>">
   <%= link_to gravatar_for(record.user, size: 50), record.user %>
   <span class="user"><%= link_to record.user.name, record.user %></span>
-  <span class="lift_weight"><%= record.lift_weight %> lbs - <%= record.lift.lift_name %></span>
-
+  <% if record.video_link.present? %>
+      <span class="lift_weight" style="background-color:#00aabb"><%= record.lift_weight %> lbs - <%= record.lift.lift_name %> - validated</span>
+  <% else %>
+    <span class="lift_weight"><%= record.lift_weight %> lbs - <%= record.lift.lift_name %></span>
+  <% end %>
     <% if current_user?(record.user) %>
       <%= link_to "delete", record, method: :delete,
                                     data: { confirm: "You sure?" } %>
@@ -11,11 +14,7 @@
     <% end %>
     |
     <%= link_to "show", record_path(record) %>
-
-    <% if record.video_link.present? %>
-    |
-      <a href="<%= record.video_link %>">video</a>
-    <% end %>
+  
   <span class="timestamp">
     Posted <%= time_ago_in_words(record.created_at) %> ago.
   </span> 

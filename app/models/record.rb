@@ -4,6 +4,8 @@ class Record < ActiveRecord::Base
 	has_many :comments, as: :commentable
 	# default_scope -> { order(created_at: :desc) }
 
+	acts_as_votable
+
 	def self.feed_scope
 		order(created_at: :desc)
 	end
@@ -15,6 +17,6 @@ class Record < ActiveRecord::Base
 	validates :user_id, presence: true
 	validates :lift_weight, presence: true
   validates_format_of :video_link, :with => URI::regexp(%w(http https)),
-  allow_nil: true
+  	allow_nil: true
 
 end
