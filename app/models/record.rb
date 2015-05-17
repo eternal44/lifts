@@ -1,6 +1,7 @@
 class Record < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :lift
+	has_many :comments, as: :commentable
 	# default_scope -> { order(created_at: :desc) }
 
 	def self.feed_scope

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :records,             only: [:create, :edit, :update, :destroy]
+  resources :records,             only: [:create, :show, :edit, :update, :destroy]
   resources :relationships,       only: [:create, :destroy]
   # resources :gyms,                only: [:show, :index]
   
