@@ -3,8 +3,6 @@
 	<div class="well">
 		 <%= comment.body %> 
 		- by <%= comment.user.name %> |
-		created at: <%= comment.created_at %> 
-
-
+		<%= time_ago_in_words(comment.created_at) %> ago
 	</div>
 <% end %>
