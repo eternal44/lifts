@@ -1,8 +1,10 @@
 <h3> Comments </h3>
 <% commentable.comments.each do |comment| %>
 	<div class="well">
-		<%= comment.body %> 
-		- <%= User.find(comment.user_id).name %> |
-		created at: <%= comment.created_at %>
+		 <%= comment.body %> 
+		- by <%= comment.user.name %> |
+		created at: <%= comment.created_at %> 
+
+
 	</div>
 <% end %>
