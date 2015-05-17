@@ -6,6 +6,10 @@ class Record < ActiveRecord::Base
 
 	acts_as_votable
 
+	def score
+		(self.get_upvotes.size / (self.get_downvotes.size + self.get_upvotes.size))*100
+	end
+
 	def self.feed_scope
 		order(created_at: :desc)
 	end
