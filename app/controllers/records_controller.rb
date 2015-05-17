@@ -6,7 +6,13 @@ class RecordsController < ApplicationController
 	def upvote
 		@record = Record.find(params[:id])
 		@record.upvote_by current_user
-		redirect_to root_url
+		redirect_to record_path
+	end
+
+	def downvote
+		@record = Record.find(params[:id])
+		@record.downvote_by current_user
+		redirect_to record_path
 	end
 
 	def create
