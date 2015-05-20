@@ -1,4 +1,4 @@
-<% if @top_4.any? %>
+<% if @top_4.present? %>
   <ol class="records">
     <%= render @top_4 %>
   </ol>

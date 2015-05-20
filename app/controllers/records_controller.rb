@@ -51,6 +51,12 @@ class RecordsController < ApplicationController
 		redirect_to request.referrer || root_url
 	end
 
+	def index
+		@records = Record.all
+    @top_4 = Record.find_each(lift_id: 2)
+
+	end
+
 		private
 
 			def record_params
