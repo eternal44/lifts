@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if user_signed_in? %>
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
@@ -28,7 +28,7 @@
             <div class="container">
                 <h1>Lift Ranker</h1>
                 <h2>Beta</h2>
-                <%= link_to "Sign up now!", signup_path, 
+                <%= link_to "Sign up now!", new_user_registration_path, 
                     class: "btn btn-lg btn-primary" %>
             </div>
         </div>
@@ -72,7 +72,7 @@
 
         <hr class="featurette-divider">
         <div class="text-center">
-          <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
         </div>
 
         <!-- Footer -->

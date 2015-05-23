@@ -23,7 +23,7 @@
 		<%= render partial: "comments/form", locals: {commentable: @user} %>
 	</aside>
 	<div class="col-md-8">
-		<%= render 'follow_form' if logged_in? %>
+		<%= render 'follow_form' if user_signed_in? %>
 	  <% if @user.records.any? %>
 	    <h3>Lifting Records (<%= @user.records.count %>)</h3>
 	    <ol class="records">

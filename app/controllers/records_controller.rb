@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
-	before_action :logged_in_user, only: [:create, :show, :destroy]
-	before_action :correct_user, 	 only: :destroy # maybe comment out
+	before_action :current_user, only: [:show, :destroy]
+	before_action :correct_user, only: [:destroy, :edit]
 
 
 	def upvote
@@ -29,6 +29,7 @@ class RecordsController < ApplicationController
 
 	def show
 		@record = Record.find(params[:id])
+		@test = "hello"
 	end
 
 	def edit

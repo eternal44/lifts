@@ -1,21 +1,9 @@
 <%= form_for(@record) do |f| %>
-  <% if @record.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
-
-      <ul>
-      <% @record.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<br>
+  <%= render 'shared/error_messages', object: f.object %>
   <div>
     <%= f.collection_select :lift_id, Lift.all, :id, :lift_name %>
   </div>
-<br>
+  <br>
   <div class="field">
     <%= f.label :lift_weight %><br>
     <%= f.number_field :lift_weight %>

@@ -1,31 +1,19 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
-
-  get 'password_resets/edit'
-
-  get 'sessions/new'
-
-  get 'users/new'
-
-  # get 'static_pages/home' #tutorial says this won't work anymore but it does when I type in the url..
-
 
   root                 'static_pages#home'
   get     'help'    => 'static_pages#help'
   get     'about'   => 'static_pages#about'
   get     'contact' => 'static_pages#contact'
-  get     'signup'  => 'users#new'
-  get     'login'   => 'sessions#new'
-  post    'login'   => 'sessions#create'
-  delete  'logout'  => 'sessions#destroy'
+
+  devise_for :users
+
   resources :users do
     member do
       get :following, :followers
     end
     resources :comments, module: :users
   end
-  resources :account_activations, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
+  
   resources :records do
     resources :comments, module: :records
     member do
