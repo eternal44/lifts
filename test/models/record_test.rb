@@ -21,8 +21,4 @@ class RecordTest < ActiveSupport::TestCase
 		@record.lift_weight = nil
 		assert_not @record.valid?
 	end
-
-	test "most recent record should be listed first" do
-		assert_equal Record.first, records(:most_recent)
-	end
 end
